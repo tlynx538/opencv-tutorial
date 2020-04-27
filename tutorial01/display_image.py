@@ -50,5 +50,9 @@ rotated=cv2.warpAffine(img,m,(w,h))
 rotated_imutils=imutils.rotate(img,-45)
 ## non clipped rotation using imutils
 rotate_bound=imutils.rotate_bound(img,45)
-cv2.imshow("Image",rotate_bound)
+
+# using gaussian blur to smooth image
+# 21,21 is the kernel size 
+blur=cv2.GaussianBlur(img,(21,21),0)
+cv2.imshow("Image",blur)
 cv2.waitKey(0)
