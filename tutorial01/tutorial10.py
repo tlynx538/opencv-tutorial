@@ -67,5 +67,22 @@ for i in cntr_cnt:
 ## final : writing the number of contours found
 text="Number of contours found is {}".format(len(cntr_cnt))
 cv2.putText(out,text,(10,20),cv2.FONT_HERSHEY_SIMPLEX,0.7,(0,0,255),2)
-cv2.imshow("Final",out) 
+
+## erosion and dilations
+# Erosions and dilations are typically used to reduce noise in binary images
+# (a side effect of thresholding).
+'''
+ Syntax for erosion(required)
+ 1. threshold image
+ 2. kernel  is set to None
+ 3. iterations is set to 5
+'''
+erd=cv2.erode(thresh.copy(),None,iterations=5)
+# performing dilations enlarges the contours 
+## syntax for dilate is similar as that of erode (in this case)
+dil=cv2.dilate(thresh.copy(),None,iterations=5)
+## masking and bitwise ops
+## we shall perform masking for the objects that got thresholded
+mask=cv2.bitwise_and(img,img,mask=thresh.copy())
+cv2.imshow("Final",mask) 
 cv2.waitKey(0)
