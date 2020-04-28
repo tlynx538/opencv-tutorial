@@ -1,6 +1,6 @@
 import cv2
 ## reading the image 
-img=cv2.imread('duck.jpeg')
+img=cv2.imread('images/duck.jpeg')
 ## Part 1: drawing over image
 ''' Syntax of rectangle (required)
     1.image

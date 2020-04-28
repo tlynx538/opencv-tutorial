@@ -1,7 +1,7 @@
 import cv2
 ## Part 00: Reading the image
 ## imread function reads the image specified
-img=cv2.imread('dispimg.jpg')
+img=cv2.imread('images/dispimg.jpg')
 ## Part 01: Reading the size of the image and performing operations
 ## reading and printing size of the image
 (h,w)=img.shape[:2] 
